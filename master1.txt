@@ -1,0 +1,77 @@
+import requests
+from bs4 import BeautifulSoup
+f=open(r"C:/Users/5288/Downloads/output12 (1).html", encoding="utf-8")
+#print(f.read())
+soup=BeautifulSoup(f.read(),'html.parser')
+print(soup)
+ele=soup.find(id="P_Nameline1")
+for name in ele:
+    print(name)
+coun=soup.find(id="PlainText14")
+for number in coun:
+    print(number)
+elem=soup.find(id="PlainText34")
+for email in elem:
+    print(email)
+acc=soup.find(id="PlainText24")
+for date in acc:
+    print(date)
+acs=soup.find_all(class_="c1")
+for date1 in acs:
+    print(date1)
+
+rce=soup.find(id="PlainText003")
+for totalamount in rce:
+    print(totalamount)
+reg=soup.find(id="PlainText004")
+for minamount in reg:
+    print(minamount)
+rtc=soup.find(id="PlainText06_date")
+for duedate in rtc:
+    print(duedate)
+tre=soup.find(id="PlainText26")
+for crelimit in tre:
+    print(crelimit)
+ycr=soup.find(id="PlainText026")
+for avlcre in ycr:
+    print(avlcre)
+qwa=soup.find(id="PlainText0026")
+for cashlim in qwa:
+    print(cashlim)
+cvt=soup.find(id="PlainText00026")
+for acl in cvt:
+    print(acl)
+pre=soup.find(id="PlainText48")
+for prevbal in pre:
+    print(prevbal)
+tcy=soup.find(id="PlainText048")
+for cash in tcy:
+    print(cash)
+yrt=soup.find(id="PlainText0048")
+for points in yrt:
+    print(points)
+iut=soup.find(id="PlainText00048")
+for payment in iut:
+    print(payment)
+    
+data_info={
+    "Name":name,
+    "Number":number,
+    "Email":email,
+    "acc_no":number,
+    "StatementPeriod":date,
+    "StatementDate":date1,
+    "TotalAmountDue":totalamount,
+    "MinimumAmountDue":minamount,
+    "PaymentDueDate":duedate,
+    "Creditlimit":crelimit,
+    "Avalcreditlim":avlcre,
+    "CashLimit":cashlim,
+    "AvailbaleCashLimit":acl,
+    "PreviousBalance":prevbal,
+    "Current Purchases":cash,
+    "PointEarned":points,
+    "Payment & Credits Received":payment
+    
+}
+print(data_info)
